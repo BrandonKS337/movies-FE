@@ -24,6 +24,8 @@ function App() {
     }
   };
 
+
+  //NOTE: used to refresh the list if movies is updated
   useEffect(() => {
     getMovies()
   },[])
