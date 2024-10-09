@@ -5,6 +5,8 @@ import { useState, useEffect } from "react";
 import Layout from "./components/Layout";
 import { Routes, Route } from "react-router-dom";
 import Home from "./components/home/Home";
+import Header from "./components/header/Header";
+import Trailer from "./components/trailer/Trailer";
 
 function App() {
   // Movies Array variable
@@ -32,11 +34,11 @@ function App() {
   return (
     <div className="App">
       {/* define the Routes */}
+      <Header/>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route path="/" element={<Home movies={movies}/>}>
-            {/* {children} */}
-          </Route>
+          <Route path="/" element={<Home movies={movies}/>}></Route>
+          <Route path="/Trailer/:ytTrailerId" element={<Trailer/>}></Route>
         </Route>
       </Routes>
     </div>
